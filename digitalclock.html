@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Page Title
+		</title>
+		<style>
+		div {
+			background-color:green;
+			width: 400px;
+			height: 400px;
+		  padding-top: 50px;
+		  padding-right: 30px;
+		  padding-bottom: 50px;
+		  padding-left: 80px;
+		  overflow:scroll;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>
+			This is a Heading
+		</h1>
+		<p>
+			Jessica and Samuel<br>
+			<img src="images/IMG_3291.JPG" alt="family picture" width="300" height="400">
+	
+		</p>
+		<div>
+			Code<br>
+			int xPin = A1;<br>
+			int yPin = A0;<br>
+			int buttonPin = 2;<br>
+<br>
+			int xPosition = 0;<br>
+			int yPosition = 0;<br>
+			int buttonState = 0;<br>
+<br>
+			void setup() {<br>
+			  // initialize serial communications at 9600 bps:<br>
+			  Serial.begin(9600); <br>
+  <br>
+			  pinMode(xPin, INPUT);<br>
+			  pinMode(yPin, INPUT);<br>
+<br>
+			  //activate pull-up resistor on the push-button pin<br>
+			  pinMode(buttonPin, INPUT_PULLUP); <br>
+  
+			  // For versions prior to Arduino 1.0.1<br>
+			  // pinMode(buttonPin, INPUT);<br>
+			  // digitalWrite(buttonPin, HIGH);<br>
+  <br>
+			}<br>
+<br>
+			void loop() {<br>
+			  xPosition = analogRead(xPin);<br>
+			  yPosition = analogRead(yPin);<br>
+			  buttonState = digitalRead(buttonPin);<br>
+  <br>
+			  Serial.print("X: ");<br>
+			  Serial.print(xPosition);<br>
+			  Serial.print(" | Y: ");<br>
+			  Serial.print(yPosition);<br>
+			  Serial.print(" | Button: ");<br>
+			  Serial.println(buttonState);<br>
+<br>
+			  delay(100); // add some delay between reads<br>
+			}<br>
+		</div>
+	</body>
+</html>
